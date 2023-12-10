@@ -16,15 +16,18 @@ document.addEventListener("keypress", function(event){
     buttonAnimation(event.code);
 });
 
-let count = 6;
+let count = 10;
 const timer = setInterval(function() {
   count--;
   updateTimer(count);
   if (count === 0) {
     clearInterval(timer);
     let str = document.querySelector("#textarea").value;
+    let wpm = str.split(" ").length;
     //alert(str.length);
-    document.querySelector(".heading").innerHTML = `${str.length} WPM`;
+    document.querySelector(".heading").innerHTML = `${wpm} WPM`;
+    document.querySelector("#textarea").disabled = true;
+    document.querySelector(".timer").textContent = `⏲ Times up!`;
     //console.log("Time's up!");
   }
 }, 1000);
