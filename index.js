@@ -16,7 +16,7 @@ document.addEventListener("keypress", function(event){
     buttonAnimation(event.code);
 });
 
-let count = 10;
+let count = 60;
 const timer = setInterval(function() {
   count--;
   updateTimer(count);
